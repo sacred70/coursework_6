@@ -2,8 +2,6 @@ from rest_framework import serializers
 from .models import Ad, Comment
 
 
-# TODO Сериалайзеры. Предлагаем Вам такую структуру, однако вы вправе использовать свою
-
 class CommentSerializer(serializers.ModelSerializer):
     ad = serializers.SlugRelatedField(read_only=True, slug_field="title")
     author = serializers.CharField(source='author.first_name', read_only=True)

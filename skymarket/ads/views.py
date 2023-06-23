@@ -1,15 +1,14 @@
 from rest_framework import pagination, viewsets
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import action
-from rest_framework import permissions
 from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from .models import Ad, Comment
-from .filters import AdFilter
+from coursework_6_skymarket.skymarket.ads.filtres import AdFilter
 from .serializers import AdSerializer, CommentSerializer
 
-from ads.permissions import AdAdminPermission, IsExecutor, IsOwner
+from .permissions import AdAdminPermission, IsExecutor, IsOwner
 
 
 class AdPagination(pagination.PageNumberPagination):

@@ -1,7 +1,7 @@
 from rest_framework.permissions import BasePermission
 from rest_framework import permissions
 
-from users.models import UserRoles
+from coursework_6_skymarket.skymarket.users.managers import UserRoles
 
 
 class AdAdminPermission(BasePermission):
